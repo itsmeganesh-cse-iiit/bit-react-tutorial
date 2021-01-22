@@ -65,7 +65,7 @@ export const StyledInput=styled.input(({type,size,disabled,error,typeLabel})=>`
 
 
 
-export const StyledTextArea=styled.textarea(({type,size,disabled,error,typeLabel})=>`
+export const StyledTextArea=styled.textarea(({resize,type,size,disabled,error,typeLabel})=>`
     height:${hasProperty('48px',PROPS.height[size])};
     z-index:1;
     box-sizing:border-box
@@ -83,7 +83,8 @@ export const StyledTextArea=styled.textarea(({type,size,disabled,error,typeLabel
     padding:0;
     background-color: #ffffff;
     outline:none;
-    padding: 12px;  
+    padding: 12px; 
+    resize:none; 
     
     /* Enable space for hide/show password icon */
     ${typeLabel==='password' && css`
@@ -106,6 +107,10 @@ export const StyledTextArea=styled.textarea(({type,size,disabled,error,typeLabel
 
     ${typeLabel==="textarea" && css`
         height:auto !important;
+    `}
+
+    ${resize && css`
+        resize:both;
     `}
 `)
 

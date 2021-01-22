@@ -22,7 +22,7 @@ const Input = ({type,size,block,disabled,error,value,className,...rest}) => {
         error:error,
         value:value,
         className:className,
-        typeLabel:type
+        typeLabel:type,
     }
     const renderComponent=(type)=>{
         let inputComponent=null

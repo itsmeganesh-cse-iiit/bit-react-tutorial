@@ -28,13 +28,14 @@ function App() {
       block
       rows={10}
       // error
+      resize
       />
       <h3>Input group Password</h3>
       <InputGroup type="password" error size="560px" block  onChange={e=>setFirstName(e.target.value)} errorText="Please fill all fields" />
       
       <h3>Input group TextArea</h3>
 
-      <InputGroup type="textarea" inputLabel="Unique ID" rows={6} error size="560px" block  onChange={e=>setFirstName(e.target.value)} errorText="Please fill all fields" />
+      <InputGroup type="textarea" inputLabel="Unique ID" rows={6} disabled size="560px" block  onChange={e=>setFirstName(e.target.value)} errorText="Please fill all fields" />
     </>
   );
 }
