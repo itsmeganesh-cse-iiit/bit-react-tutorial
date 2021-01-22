@@ -21,7 +21,7 @@ const Input = ({type,size,block,disabled,error,value,className,...rest}) => {
     }, [showPassword])
 
     return (
-        <Styles size={size} block={block}  >
+        <Styles size={size} block={block} >
         <StyledInput 
             type={inputType} 
             size={size} 
@@ -31,6 +31,7 @@ const Input = ({type,size,block,disabled,error,value,className,...rest}) => {
             {...rest} 
             value={value}
             className={className}
+            typeLabel={type}
         />
          {type==='password' &&
         <IconWrapper>

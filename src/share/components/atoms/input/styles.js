@@ -1,7 +1,5 @@
 import styled,{css} from 'styled-components'
 
-import Eye from './assets/eye.svg'
-import EyeOff from './assets/eye-off.svg'
 
 const PROPS={
     height:{
@@ -20,7 +18,7 @@ const hasProperty=(inpVal,data)=>{
     return data ? data :inpVal
 }
 
-export const StyledInput=styled.input(({type,size,disabled,error})=>`
+export const StyledInput=styled.input(({type,size,disabled,error,typeLabel})=>`
     height:${hasProperty('48px',PROPS.height[size])};
     z-index:1;
     box-sizing:border-box
@@ -40,8 +38,9 @@ export const StyledInput=styled.input(({type,size,disabled,error})=>`
     outline:none;
     padding: 12px;  
 
+    
     /* Enable space for hide/show password icon */
-    ${type==='password' && css`
+    ${typeLabel==='password' && css`
         padding-right:44px;
     `};
     width:100%;
@@ -67,10 +66,7 @@ export const Styles=styled.div(({size,block})=>`
       }
     position:relative;
     width:${hasProperty(size,PROPS.width[size])};
-    height:${hasProperty(size,PROPS.height[size])};
     min-width:216px;
-    margin:5px;
-
     /* Input block width */
     ${block && css`
         width:99%;
