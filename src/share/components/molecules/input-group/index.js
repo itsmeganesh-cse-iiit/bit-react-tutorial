@@ -2,10 +2,10 @@ import React from 'react'
 import Input from 'share/components/atoms/input'
 import {Wrap,InputLabel,ErrText} from './styles'
 
-const InputGroup = ({type,size,block,disabled,error,errorText,value,className,...rest}) => {
+const InputGroup = ({inputLabel,type,size,block,disabled,error,errorText,value,className,...rest}) => {
     return (
         <Wrap className={className} {...rest} size={size}>
-            <InputLabel>Unique ID</InputLabel>
+            <InputLabel>{inputLabel}</InputLabel>
             <Input
                 type={type} 
                 size={size} 
@@ -29,6 +29,7 @@ InputGroup.defaultProps={
     disabled:false,
     error:false,
     block:false,
+    inputLabel:"Input Label"
 }
 
 export default InputGroup

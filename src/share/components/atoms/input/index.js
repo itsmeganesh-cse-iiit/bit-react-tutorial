@@ -1,5 +1,5 @@
 import React,{useState,useEffect} from 'react'
-import {StyledInput,Styles,EyeIcon,IconWrapper} from './styles'
+import {StyledInput,Styles,EyeIcon,IconWrapper,StyledTextArea} from './styles'
 import Eye from './assets/eye.svg'
 import EyeOff from './assets/eye-off.svg'
 /**
@@ -14,26 +14,40 @@ const Input = ({type,size,block,disabled,error,value,className,...rest}) => {
     const handlePassword=()=>{
         setShowPassword(!showPassword);
     }
+    let input_props={
+        type:inputType,
+        size:size,
+        block:block,
+        disabled:disabled,
+        error:error,
+        value:value,
+        className:className,
+        typeLabel:type
+    }
+    const renderComponent=(type)=>{
+        let inputComponent=null
+        switch(type){
+            case "textarea":
+                inputComponent= <StyledTextArea {...input_props} {...rest} />
+                break;
+            default:
+                inputComponent= <StyledInput  {...input_props} {...rest} />  
+                
+        }
+        return inputComponent
+    }
     useEffect(() => {
         let nextType=type==='text' ? 'text' :'password'
         if(showPassword) nextType="text"
         setInputType(nextType)
     }, [showPassword])
-
+    
     return (
-        <Styles size={size} block={block} >
-        <StyledInput 
-            type={inputType} 
-            size={size} 
-            block={block} 
-            disabled={disabled} 
-            error={error} 
-            {...rest} 
-            value={value}
-            className={className}
-            typeLabel={type}
-        />
-         {type==='password' &&
+        <Styles size={size} block={block}>
+    
+        {renderComponent(type)}
+
+        {type==='password' &&
         <IconWrapper>
             <EyeIcon  src={showPassword ? EyeOff : Eye} alt="eye" onClick={handlePassword}/>
         </IconWrapper>
