@@ -39,7 +39,7 @@
     "env": {
       "compiler": "bit.envs/compilers/react@1.0.21"
     },
-    "componentsDefaultDirectory": "components/{name}",
+    "componentsDefaultDirectory": "share/atoms/{name}",
     "packageManager": "npm"
   }
 }
