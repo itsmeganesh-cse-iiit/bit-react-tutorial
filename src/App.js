@@ -1,18 +1,20 @@
-import React from 'react';
-// import ProductList from './components/product-list';
-// import TopBar from './components/top-bar';
-import './App.css';
+import React,{useState} from 'react';
 
-import Input from './share/atoms/input'
+import Input from 'share/components/atoms/input'
 
 function App() {
+  const [firstName, setFirstName] = useState('')
+  console.log("firstname",firstName)
   return (
     <>
-      {/* <TopBar className="top-bar" />
-      <div className="container">
-        <ProductList />
-      </div> */}
-      <Input/>
+      <Input 
+      type="password"
+      value={firstName} 
+      onChange={e=>setFirstName(e.target.value)}
+      size="md"
+      block
+      // error
+      />
     </>
   );
 }
