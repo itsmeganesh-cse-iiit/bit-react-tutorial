@@ -10,12 +10,16 @@ import TabItemExamples from 'examples/tab-item-ex'
 // eslint-disable-next-line 
 import TableExamples from 'examples/table-ex'
 
+// eslint-disable-next-line 
+import BreadCrumbItemExamples from 'examples/bread-crumb-item-ex'
+
 function App() {
   return (
     <>
     {/* <InputExamples/> */}
     {/* <TabItemExamples/> */}
-    <TableExamples/>
+    {/* <TableExamples/> */}
+    <BreadCrumbItemExamples/>
     </>
   );
 }

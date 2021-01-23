@@ -11,7 +11,7 @@ export const Wrap=styled.div(({contentAlign,activeColor,borderRadius,color,activ
     width: 230px;
     height: 48px;
     border-radius: ${borderRadius};
-    background-color: ${color};
+    background-color: ${active ? activeColor :color};
     display:flex;
     justify-content:${POSITION[contentAlign]};
     align-items:center;
@@ -25,24 +25,24 @@ export const Wrap=styled.div(({contentAlign,activeColor,borderRadius,color,activ
     padding:0 20px;
     color:#565656;
     z-index:2;
+    cursor:pointer;
+    
     ${active && css`
-        background-color:${activeColor};
         color: #ffffff;
         font-weight: bold;
-
     `};
 
 
     /* arrow */
     &:after{
-        color:${color};
+        color: ${active ? activeColor :color};
         content:"";
         position: absolute;
         ${(active && showArrow) && css`
             border-width: 10px 10px 0;
             border-style: solid;
         `}
-        border-color: ${color} transparent;
+        border-color: ${active ? activeColor :color} transparent;
         bottom: -7px;
         left: 95px;
         z-index:1;

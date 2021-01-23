@@ -16,7 +16,7 @@ export const StyledTable=styled.table(({block,list})=>`
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width:314px;
+        max-width:335px;
         vertical-align: middle;
         ${list && css`
             padding: 9px 57px 9px 20px;
@@ -46,7 +46,7 @@ export const TableHead=styled.th(({align})=>`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width:314px;
+    max-width:335px;
     border: solid 1px #edeff9;
     border-top-style:none;
   

@@ -31,7 +31,7 @@ const TableExamples = () => {
     return (
       <>
         <tr align="center">
-          <td colSpan={4} align="left">Atomic Physics & Nuclear Physics</td>
+          <td colSpan={4} align="left">Atomic Physics & Nuclear Physics PhysicsPhysics</td>
           <td >1</td>
           <td>1</td>
           <td>0</td>
