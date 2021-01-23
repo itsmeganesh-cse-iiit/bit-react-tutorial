@@ -24,7 +24,7 @@ export const Wrap=styled.div(({contentAlign,activeColor,borderRadius,color,activ
     position:relative;
     padding:0 20px;
     color:#565656;
-    
+    z-index:2;
     ${active && css`
         background-color:${activeColor};
         color: #ffffff;
@@ -45,6 +45,7 @@ export const Wrap=styled.div(({contentAlign,activeColor,borderRadius,color,activ
         border-color: ${color} transparent;
         bottom: -9px;
         left: 95px;
+        z-index:1;
 
         ${(arrowPosition==="left" || vertical)&& css`
             transform:rotate(-90deg);

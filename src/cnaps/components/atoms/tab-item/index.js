@@ -17,13 +17,13 @@ const TabItem = ({
   return (
     <Wrap
       contentAlign={contentAlign}
+      activeColor={activeColor}
       color={color}
       active={active}
       showArrow={showArrow}
       arrowPosition={arrowPosition}
       borderRadius={borderRadius}
       vertical={vertical}
-      activeColor={activeColor}
       {...rest}
     >
       {children ? children : title}

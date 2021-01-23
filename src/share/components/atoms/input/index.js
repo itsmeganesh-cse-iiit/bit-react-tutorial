@@ -2,12 +2,7 @@ import React,{useState,useEffect} from 'react'
 import {StyledInput,Styles,EyeIcon,IconWrapper,StyledTextArea} from './styles'
 import Eye from './assets/eye.svg'
 import EyeOff from './assets/eye-off.svg'
-/**
- * size - sm-31px -lg-48px - default-md-38px 
- * type - text-password-textarea
- * disabled - true or false
- * error state border red
- */
+
 const Input = ({type,size,block,disabled,error,value,className,...rest}) => {
     const [showPassword, setShowPassword] = useState(false)
     const [inputType, setInputType] = useState(type)
@@ -40,7 +35,7 @@ const Input = ({type,size,block,disabled,error,value,className,...rest}) => {
         let nextType=type==='text' ? 'text' :'password'
         if(showPassword) nextType="text"
         setInputType(nextType)
-    }, [showPassword])
+    }, [showPassword,type])
     
     return (
         <Styles size={size} block={block}>
