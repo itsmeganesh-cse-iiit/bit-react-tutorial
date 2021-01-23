@@ -15,6 +15,10 @@ import BreadCrumbItemExamples from 'examples/bread-crumb-item-ex'
 
 // eslint-disable-next-line 
 import BreadCrumbsExample from 'examples/bread-crumbs-ex'
+
+import RankCardExamples from 'examples/rank-card-ex'
+
+
 import { Link, BrowserRouter, Route } from "react-router-dom";
 
 function App() {
@@ -36,17 +40,17 @@ function App() {
     {/* <TabItemExamples/> */}
     {/* <TableExamples/> */}
     {/* <BreadCrumbItemExamples/> */}
-
+    <RankCardExamples/>
   
     <BrowserRouter>
-    <BreadCrumbsExample routesList={items} />
+    {/* <BreadCrumbsExample routesList={items} /> */}
     <Route exact path="/" component={Home}/>
     <Route exact path="/contact" component={Contact}/>
     <Route exact path="/dashboard" component={Dashboard}/>
     <Route exact path="/about" component={About}/>
     <Route exact path="/blog" component={Blog}/>
     <br/>
-        {items.map(({ to, label }) => (
+        {/* {items.map(({ to, label }) => (
           <>
           <button>
             <Link to={to} key={to}>
@@ -55,7 +59,7 @@ function App() {
             </button>
             
           </>
-        ))}
+        ))} */}
      
     </BrowserRouter>
     </>
