@@ -19,8 +19,7 @@ export const StyledTable=styled.table(({block})=>`
         max-width:313px;
         vertical-align: middle;
        
-    }
-
+    };
 `)
 
 

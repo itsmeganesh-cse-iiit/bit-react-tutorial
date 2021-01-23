@@ -1,6 +1,8 @@
 import React from "react";
 import { StyledTable, TableHead } from "./styles";
 const Table = ({ children, columns, block, ...rest }) => {
+  if(children)
+    React.Children.map(children,(child)=>console.log("child",child))
   return (
     <StyledTable {...rest} block={block}>
       <thead>

@@ -21,14 +21,14 @@ const TableExamples = () => {
   const TableData = () => {
     return (
       <>
-        <tr>
-          <td colSpan={4}>Atomic Physics & Nuclear Physics</td>
-          <td>1</td>
+        <tr align="center">
+          <td colSpan={4} align="left">Atomic Physics & Nuclear Physics</td>
+          <td >1</td>
           <td>1</td>
           <td>0</td>
         </tr>
-        <tr>
-          <td colSpan={4}>
+        <tr align="center">
+          <td colSpan={4} align="left">
             Electrostatics - I [Electric Charges, Fields & Poten
             sldfkjskldjflskdjf
           </td>
