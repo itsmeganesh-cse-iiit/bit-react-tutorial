@@ -1,5 +1,5 @@
 import React from 'react'
-import TabItem from 'cnaps/components/atoms/tab-item'
+import TabItem from 'share/components/atoms/tab-item'
 
 const TabItemExamples = () => {
     return (

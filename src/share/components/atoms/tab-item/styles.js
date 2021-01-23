@@ -43,7 +43,7 @@ export const Wrap=styled.div(({contentAlign,activeColor,borderRadius,color,activ
             border-style: solid;
         `}
         border-color: ${color} transparent;
-        bottom: -9px;
+        bottom: -7px;
         left: 95px;
         z-index:1;
 
