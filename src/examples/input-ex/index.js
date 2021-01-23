@@ -5,7 +5,7 @@ import InputGroup from 'share/components/molecules/input-group'
 const InputExamples = () => {
     const [firstName, setFirstName] = useState('')
     return (
-        <div>
+        <div style={{margin:"10px 100px"}}>
         {/* Inputs */}
         <h3>Input - Text</h3>
         <Input 

@@ -2,7 +2,7 @@ import React from 'react'
 import BreakCrumbItem from 'share/components/atoms/bread-crumb-item'
 const BreadCrumbItemExamples = () => {
     return (
-        <div>
+        <div style={{margin:"10px 100px"}}>
             <BreakCrumbItem label="Home"/> <br/>
             <BreakCrumbItem label="Exams"/><br/>
             <BreakCrumbItem label="Details"/><br/>

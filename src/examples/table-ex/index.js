@@ -89,7 +89,7 @@ const TableExamples = () => {
     );
   };
   return (
-    <div>
+    <div style={{margin:"10px 50px"}}>
       <h3>Table</h3>
       <Table columns={columns}><TableData/></Table>
 

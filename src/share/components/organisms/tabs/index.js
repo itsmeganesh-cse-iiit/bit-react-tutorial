@@ -2,27 +2,29 @@ import React from "react";
 import TabItem from "share/components/atoms/tab-item";
 import {TabItemsWrapper,TabsWrapper,Content} from './styles'
 
-const Tabs = ({data,layout,color,activeColor,activeTab,onChange}) => {
+const Tabs = ({data,layout,color,activeColor,activeTab,onChange,borderRadius,showArrow,padLayout}) => {
  
   return (
-    <TabsWrapper layout={layout}>
-      <TabItemsWrapper layout={layout}>
+    <TabsWrapper layout={layout} borderRadius={borderRadius} >
+      <TabItemsWrapper layout={layout} padLayout={padLayout}>
           {data.map((tabData,index)=>(
             <TabItem
             id={tabData.id}
-            contentAlign="center"
+            contentAlign={layout!=='vertical' && 'center'}
             activeColor={activeColor}
             color={color}
             title={tabData.name}
-             active={index+1===activeTab}
+            active={index+1===activeTab}
             vertical={layout==='vertical'}
             onClick={(id)=>onChange(id)}
+            borderRadius={borderRadius}
+            showArrow={showArrow}
             />
 
           ))}
          
       </TabItemsWrapper>
-       <Content>
+       <Content padLayout={padLayout}>
            {data.filter(each=>each.id===activeTab)[0].data}
        </Content>
       </TabsWrapper>     
@@ -30,6 +32,7 @@ const Tabs = ({data,layout,color,activeColor,activeTab,onChange}) => {
 };
 
 Tabs.defaultProps={
-    onChange:()=>{} 
+    onChange:()=>{},
+    borderRadius:"0px" 
 }
 export default Tabs;

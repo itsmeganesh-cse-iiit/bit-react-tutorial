@@ -22,8 +22,35 @@ export const TabItemsWrapper = styled.div`
           border-top-right-radius: 6px;
           border-bottom-left-radius: 0px;
         }
+        &:first-child {
+            border-left-style: solid;
+    }
       `}
+    
+    ${({borderRadius})=>borderRadius && css`
+        *{
+            border-radius:0px;
+        }
+    `}
+
+    ${({padLayout})=>padLayout && css`
+        margin:10px 30px;
+        border:none;
+        font-size:18px;
+        &:first-child{
+            margin-top:30px;
+        }
+    `}
+
+    
   }
+  ${({padLayout})=>padLayout && css`
+        border:none;
+        border-radius: 6px;
+        box-shadow: 0 16px 32px 0 rgba(221, 230, 237, 0.4);
+        background-color: #ffffff;
+
+    `}
 
   ${({ layout }) =>
     layout === "vertical" &&
@@ -44,4 +71,12 @@ export const TabsWrapper = styled.div`
 export const Content = styled.div`
   width: 100%;
   border: 1px solid #e8e8f3;
+
+  ${({padLayout})=>padLayout && css`
+        border:none;
+        border-radius: 6px;
+        box-shadow: 0 16px 32px 0 rgba(221, 230, 237, 0.4);
+        background-color: #ffffff;
+        margin-left:20px;
+    `}
 `;
