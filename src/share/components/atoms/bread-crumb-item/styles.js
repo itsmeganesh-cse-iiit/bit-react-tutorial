@@ -18,22 +18,22 @@ export const Wrap = styled.div`
  
 `
 
-export const ArrowIcon = styled.div(({isLast})=>`
+export const ArrowIcon = styled.div(({active})=>`
   display: inline-block;
   margin: 1px 0px 1px 9px;
-  ${isLast && css`
+  ${(active) && css`
    display:none;
   `} 
 `)
   
 
 
-export const Text = styled.div(({active,color,isLast})=>`
+export const Text = styled.div(({active,color})=>`
   display: inline-block;
   cursor: pointer;
   &:hover {
     border-bottom: 1px solid ${color};
-    ${isLast && css`
+    ${active && css`
         border-bottom:none;
     `}
   }

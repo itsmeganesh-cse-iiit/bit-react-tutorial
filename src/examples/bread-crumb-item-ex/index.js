@@ -6,7 +6,7 @@ const BreadCrumbItemExamples = () => {
             <BreakCrumbItem label="Home"/>
             <BreakCrumbItem label="Exams"/>
             <BreakCrumbItem label="Details"/>
-            <BreakCrumbItem isLast active label="ISSO Exam"/>
+            <BreakCrumbItem  active label="ISSO Exam"/>
         </div>
     )
 }
