@@ -2,29 +2,47 @@ import React,{useEffect,useState} from 'react'
 import {Wrap} from './styles'
 import styled from 'styled-components';
 import BreadCrumbItem from 'share/components/atoms/bread-crumb-item'
-
+import {getRouteDetails} from './helpers'
 /**
  * Place breadcrumbs component on top of routes
  */
 
 
-const BreadCrumbs = ({routesList,history}) => {
+const BreadCrumbs = ({routesList,subroutesList,history}) => {
       const [breadcrumbsList, setBreadcrumbsList] = useState([])
-      console.log("routesList",routesList)
+      const homeRoute=[getRouteDetails(routesList,"/")]
 
       useEffect(() => {
         let pathName=history.location.pathname
         console.log("pathname",pathName)
         if(pathName!=="/"){
-            let nextList=[{ to: '/', label: 'Home' }]
-            let currentRoute=routesList.filter(each=>each.to===pathName)[0]
-            nextList.push(currentRoute)
-            setBreadcrumbsList(nextList)
+            let nextList=homeRoute
+            let currentRoute=getRouteDetails(routesList,pathName)
+            if(currentRoute){
+                nextList.push(currentRoute)
+                setBreadcrumbsList(nextList)
+            }else{
+                let currentSubRoute=false
+                for(let key in subroutesList){
+                    currentSubRoute=getRouteDetails(subroutesList[key],pathName)
+                    if(currentSubRoute){
+                        let nextRouteList=homeRoute
+                        let getParentRoute=getRouteDetails(routesList,key)
+                        nextRouteList.push(getParentRoute)
+                        nextRouteList.push(currentSubRoute)
+                        setBreadcrumbsList(nextRouteList)
+                        break;
+                    }
+                }
+            }
         }else{
             setBreadcrumbsList([])
         }
       }, [history.location])
-      console.log("breadcrumbsList",breadcrumbsList)
+
+    const onBreadCrumClick=(path)=>{
+        history.push({pathname:path})
+    }
     return (
         <Wrap>
             {breadcrumbsList.map(({ to, label },index) => (
@@ -34,6 +52,8 @@ const BreadCrumbs = ({routesList,history}) => {
                 label={label}
                 position={index}
                 totalCount={breadcrumbsList.length}
+                history={history}
+                onClick={onBreadCrumClick}
                  />
             ))}
         <br/>

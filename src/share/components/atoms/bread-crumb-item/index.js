@@ -1,6 +1,6 @@
 import React from 'react'
 import {Wrap,ArrowIcon,Text} from './styles'
-const BreadCrumbItem = ({label,color,activeColor,active,position,totalCount,...rest}) => {
+const BreadCrumbItem = ({label,color,activeColor,active,position,totalCount,onClick,to,...rest}) => {
     let props={
         activeColor:activeColor,
         active:active,
@@ -12,8 +12,11 @@ const BreadCrumbItem = ({label,color,activeColor,active,position,totalCount,...r
     if((position===totalCount-1) || (position===0 && totalCount===1)){
         props["active"]=true
     }
+    const handleClick=()=>{
+        onClick(to)
+    }
     return (
-        <Wrap {...props} {...rest} >
+        <Wrap {...props} {...rest} onClick={handleClick}>
             <Text {...props} >{label} </Text>
             <ArrowIcon {...props}>&#62;</ArrowIcon>
         </Wrap>

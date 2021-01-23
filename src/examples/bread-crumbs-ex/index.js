@@ -5,7 +5,7 @@ import { withRouter } from "react-router";
 const BreadCrumbsExample = (props) => {
   return (
     <div>
-        <BreadCrumbs routesList={props.routesList} history={props.history}/>
+        <BreadCrumbs subroutesList={props.subRoutesList} routesList={props.routesList} history={props.history}/>
 
     </div>
   );
