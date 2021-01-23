@@ -1,11 +1,11 @@
 import styled,{css} from 'styled-components'
 
 
-export const StyledTable=styled.table(({block,list})=>`
+export const StyledTable=styled.table`
     border-collapse: collapse;
     font-family:inherit;
     margin:3px;
-    width:${block ? "100%" : 'auto'};
+    width:${({block})=>block ? "100%" : 'auto'};
     * {
       box-sizing: border-box;
     }
@@ -18,15 +18,20 @@ export const StyledTable=styled.table(({block,list})=>`
         text-overflow: ellipsis;
         max-width:335px;
         vertical-align: middle;
-        ${list && css`
+        ${({list})=>list && css`
             padding: 9px 57px 9px 20px;
             border-top:none;
             border-left:none;
             border-right:none;
         `}
+        ${({noPad})=>noPad && css`
+            padding:0px;
+            padding-right:-10px;
+            z-index:100;
+        `}
        
     };
-`)
+`
 
 
 

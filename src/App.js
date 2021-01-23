@@ -36,18 +36,15 @@ function App() {
     { to: "/bread-crumbs-view", label: "Final View" },
   ]
 }
-  const Home=()=><></>
-  const Contact=()=><h2>Contact Page</h2>
+  const Home=()=><>
+      <RankCardExamples/>
+  </>
   const BreadCrumsComp=()=><><BreadCrumbItemExamples/><br/>
   <Link to={'/bread-crumbs-view'} >Full Bread Crumb view</Link><br/></>
-  const About=()=><h2>About Page</h2>
-  const Blog=()=><h2>Blog Page</h2>
   const BreadCrumbsMore=()=><> <BreadCrumbsExample routesList={items} subRoutesList={subItems} /></>
   return (
     <>
 
-
-    {/* <RankCardExamples/> */}
   
     <BrowserRouter>
     <hr/>
@@ -66,6 +63,7 @@ function App() {
       </>
     ))}
     <center>
+    <div>
     <Route exact path="/" component={Home}/>
     <Route exact path="/input" component={InputExamples}/>
     <Route exact path="/bread-crumb" component={BreadCrumsComp}/>
@@ -73,6 +71,7 @@ function App() {
     <Route exact path="/table" component={TableExamples}/>
     <Route exact path="/tabs" component={TabItemExamples} />
     <Route exact path="/rank-card" component={RankCardExamples}/>
+    </div>
     </center>
     </BrowserRouter>
     </>

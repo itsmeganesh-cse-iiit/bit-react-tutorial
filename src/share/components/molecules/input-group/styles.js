@@ -20,8 +20,9 @@ export const Wrap=styled.div`
     display:block;
 `
   
-export const InputLabel=styled.label`
+export const InputLabel=styled.div`
   font-family: inherit;
+  display:inline-block;
   font-size: 16px;
   font-weight: normal;
   font-stretch: normal;

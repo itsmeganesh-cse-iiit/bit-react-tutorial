@@ -1,33 +1,66 @@
-import React from 'react'
-import TabItem from 'share/components/atoms/tab-item'
+import React from "react";
+import TabItem from "share/components/atoms/tab-item";
+import styled from 'styled-components'
 
-const TabItemExamples = () => {
-    return (
-        <div>
-    {/* Tab Items and Tabs */}
-    <br/>
-    <TabItem activeColor="#d71a63" color="#e8e8f3" active vertical/> <br/>
-
-    <TabItem  activeColor="#d71a63" color="#e8e8f3" active /> <br/>
-    
-    <TabItem  activeColor="#d71a63" color="#e8e8f3" active showArrow={false} borderRadius="10px" /><br/>
-
-   <table>
-     <tr>
-      <TabItem  activeColor="#d71a63" color="#e8e8f3"  showArrow={false}  title="Profile"/>
-      </tr>
-      <tr>
-      <TabItem  activeColor="#d71a63" color="#e8e8f3"  showArrow={false}  title="FAQs" />
-      </tr>
-      <tr>
-      <TabItem  activeColor="#d71a63" color="#e8e8f3"  active vertical  title="Help" />
-      </tr>
-      <tr>
-      <TabItem  activeColor="#d71a63" color="#e8e8f3"  showArrow={false}  title="FAQs" />
-      </tr>
-   </table>
-        </div>
-    )
+const TabItemsWrapper= styled.div`
+*{
+    border:1px solid #e8e8f3;
+    &:first-child{
+        border-top-left-radius:6px;
+    }
+    &:last-child{
+        border-bottom-left-radius:6px;
+    }
 }
 
-export default TabItemExamples
+`
+const TabItemExamples = () => {
+  return (
+    <div>
+      {/* Tab Items and Tabs */}
+      <br />
+      <TabItem activeColor="#d71a63" color="#e8e8f3" active vertical /> <br />
+      <TabItem activeColor="#d71a63" color="#e8e8f3" active /> <br />
+      <TabItem
+        activeColor="#d71a63"
+        color="#e8e8f3"
+        active
+        showArrow={false}
+        borderRadius="10px"
+      />
+      <br />
+      <TabItemsWrapper>
+          <TabItem
+              activeColor="#d71a63"
+              color="#f9f9ff"
+              title="All Subjects"
+              active
+              vertical
+            />
+            <TabItem
+              activeColor="#d71a63"
+              color="#f9f9ff"
+              showArrow={false}
+              title="Physics"
+            />
+             <TabItem
+              activeColor="#d71a63"
+              color="#f9f9ff"
+              vertical
+              title="Chemistry"
+            />
+             <TabItem
+              activeColor="#d71a63"
+              color="#f9f9ff"
+              showArrow={false}
+              title="Biology"
+            />
+      </TabItemsWrapper>
+      
+           
+       
+    </div>
+  );
+};
+
+export default TabItemExamples;
