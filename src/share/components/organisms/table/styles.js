@@ -24,11 +24,10 @@ export const StyledTable=styled.table(({block})=>`
 
 
 
-export const TableHead=styled.td(({align})=>`
+export const TableHead=styled.th(({align})=>`
     text-align: ${align ? align : 'center'}; 
     vertical-align: middle;
-    border: solid 1px #edeff9;
-    padding: 16px 21px 14px 20px;
+    padding: 24px 57px 22px 20px;
     background-color: #f9f9ff;
     font-size: 14px;
     font-weight: bold;
@@ -42,4 +41,13 @@ export const TableHead=styled.td(({align})=>`
     overflow: hidden;
     text-overflow: ellipsis;
     max-width:313px;
+    border: solid 1px #edeff9;
+    border-top-style:none;
+  
+    &:first-child {
+        border-left-style:none;
+    }
+    &:last-child {
+        border-right-style:none;
+    }
 `)
