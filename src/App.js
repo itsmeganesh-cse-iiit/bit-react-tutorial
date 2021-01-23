@@ -26,9 +26,6 @@ function App() {
     { to: "/", label: "Home" },
     { to: "/dashboard", label: "Dashboard" },
     { to: "/contact", label: "Contact" },
-    // { to: "/contact/:username", label: "User Details"},
-    // { to: "/contact/query=?", label: "User Details" },
-    // { to: "/contact/users", label: "User Details" },
     { to: "/about", label: "About" },
     { to: "/blog", label: "Blog" },
 ];
@@ -40,7 +37,7 @@ function App() {
   const Home=()=><h2>Home Page</h2>
   const Contact=()=><h2>Contact Page</h2>
   const Dashboard=()=><h2>Dashboard Page<br/>
-  <Link to={'/instrutions'} >Instructions</Link></h2>
+  <Link to={'/instrutions?id=10'} >Instructions</Link></h2>
   const About=()=><h2>About Page</h2>
   const Blog=()=><h2>Blog Page</h2>
   const Instructions=()=><h2>Instructions </h2>

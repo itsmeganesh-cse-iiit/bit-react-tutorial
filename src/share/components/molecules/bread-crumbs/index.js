@@ -24,7 +24,11 @@ const BreadCrumbs = ({routesList,subroutesList,history}) => {
             }else{
                 let currentSubRoute=false
                 for(let key in subroutesList){
-                    currentSubRoute=getRouteDetails(subroutesList[key],pathName)
+                    let correctedPath=pathName
+                    if((pathName.split("/")>1)){
+                        correctedPath=`/${pathName.split("/")[0]}`
+                    }
+                    currentSubRoute=getRouteDetails(subroutesList[key],correctedPath)
                     if(currentSubRoute){
                         let nextRouteList=homeRoute
                         let getParentRoute=getRouteDetails(routesList,key)
