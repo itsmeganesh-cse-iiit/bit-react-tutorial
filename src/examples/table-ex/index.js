@@ -68,6 +68,26 @@ const TableExamples = () => {
       </>
     );
   };
+  const TableData3 = () => {
+    return (
+      <>
+        <tr align="left">
+          <td><div style={{display:"flex",alignItems:"center"}}><Circle/> &nbsp;Physics</div></td>
+          <td><div style={{display:"flex",alignItems:"center"}}><Circle/> &nbsp;Physics</div></td>
+          <td><div style={{display:"flex",alignItems:"center"}}><Circle/> &nbsp;Physics</div></td>
+          <td><div style={{display:"flex",alignItems:"center"}}><Circle/> &nbsp;Physics</div></td>
+        </tr>
+
+        <tr align="left">
+          <td><div style={{display:"flex",alignItems:"center"}}><Circle/> &nbsp;Physics</div></td>
+          <td><div style={{display:"flex",alignItems:"center"}}><Circle/> &nbsp;Physics</div></td>
+          <td><div style={{display:"flex",alignItems:"center"}}><Circle/> &nbsp;Physics</div></td>
+          <td><div style={{display:"flex",alignItems:"center"}}><Circle/> &nbsp;Physics</div></td>
+        </tr>
+        
+      </>
+    );
+  };
   return (
     <div>
       <h3>Table</h3>
@@ -81,6 +101,11 @@ const TableExamples = () => {
 
       <h3>Table - w/o Heading</h3>
       <Table block list><TableData2/></Table>
+
+
+
+      <h3>Table - w/o Heading ex-2</h3>
+      <Table block ><TableData3/></Table>
     </div>
   );
 };
