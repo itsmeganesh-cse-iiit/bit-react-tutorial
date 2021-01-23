@@ -11,12 +11,12 @@ export const StyledTable=styled.table(({block,list})=>`
     }
    
     td{
-        padding: 24px 57px 22px 20px;
+        padding: 24px 38px 22px 38px;
         border: solid 1px #edeff9;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
-        max-width:313px;
+        max-width:314px;
         vertical-align: middle;
         ${list && css`
             padding: 9px 57px 9px 20px;
@@ -33,7 +33,7 @@ export const StyledTable=styled.table(({block,list})=>`
 export const TableHead=styled.th(({align})=>`
     text-align: ${align ? align : 'center'}; 
     vertical-align: middle;
-    padding: 24px 57px 22px 20px;
+    padding: 24px 38px 22px 38px;
     background-color: #f9f9ff;
     font-size: 14px;
     font-weight: bold;
@@ -46,7 +46,7 @@ export const TableHead=styled.th(({align})=>`
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width:313px;
+    max-width:314px;
     border: solid 1px #edeff9;
     border-top-style:none;
   
