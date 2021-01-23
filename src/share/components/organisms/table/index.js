@@ -1,9 +1,9 @@
 import React from "react";
 import { StyledTable, TableHead } from "./styles";
-const Table = ({ children, columns, block, ...rest }) => {
+const Table = ({ children, columns,list, block, ...rest }) => {
   
   return (
-    <StyledTable {...rest} block={block}>
+    <StyledTable {...rest} block={block} list={list}>
       <thead>
         <tr>
           {columns.map((col) => (
@@ -21,5 +21,6 @@ const Table = ({ children, columns, block, ...rest }) => {
 Table.defaultProps = {
   columns: [],
   block: false,
+  list:false,
 };
 export default Table;

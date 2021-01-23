@@ -1,7 +1,7 @@
-import styled from 'styled-components'
+import styled,{css} from 'styled-components'
 
 
-export const StyledTable=styled.table(({block})=>`
+export const StyledTable=styled.table(({block,list})=>`
     border-collapse: collapse;
     font-family:inherit;
     margin:3px;
@@ -18,6 +18,12 @@ export const StyledTable=styled.table(({block})=>`
         text-overflow: ellipsis;
         max-width:313px;
         vertical-align: middle;
+        ${list && css`
+            padding: 9px 57px 9px 20px;
+            border-top:none;
+            border-left:none;
+            border-right:none;
+        `}
        
     };
 `)

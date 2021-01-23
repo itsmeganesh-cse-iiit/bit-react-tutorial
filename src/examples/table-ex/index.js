@@ -1,5 +1,14 @@
 import React from "react";
 import Table from "share/components/organisms/table";
+import styled from 'styled-components'
+
+const Circle=styled.div`
+  width: 56px;
+  height: 56px;
+  margin: 0 16px 0 0;
+  background-color: rgba(216, 27, 100, 0.1);
+  border-radius:50px;
+`
 
 const columns = [
   {
@@ -39,6 +48,26 @@ const TableExamples = () => {
       </>
     );
   };
+  const TableData2 = () => {
+    return (
+      <>
+        <tr align="center">
+          <td colSpan={4} align="left"><div style={{display:"flex",alignItems:"center"}}><Circle/> &nbsp;Physics</div></td>
+          <td><b>56/75</b> <br/>Score</td>
+          <td><b>56/75</b> <br/>Accuracy</td>
+          <td><b>56/75</b> <br/>Avg. Time/ question</td>
+          
+        </tr>
+        <tr align="center">
+        <td colSpan={4} align="left"><div style={{display:"flex",alignItems:"center"}}><Circle/> &nbsp;Chemistry</div></td>
+          <td><b>56/75</b> <br/>Score</td>
+          <td><b>56/75</b> <br/>Accuracy</td>
+          <td><b>56/75</b> <br/>Avg. Time/ question</td>
+          
+        </tr>
+      </>
+    );
+  };
   return (
     <div>
       <h3>Table</h3>
@@ -49,6 +78,9 @@ const TableExamples = () => {
 
       <h3>Table - Heading - alignments</h3>
       <Table columns={columns} block><TableData/></Table>
+
+      <h3>Table - w/o Heading</h3>
+      <Table block list><TableData2/></Table>
     </div>
   );
 };
