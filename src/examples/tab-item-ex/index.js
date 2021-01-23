@@ -1,7 +1,7 @@
 import React from "react";
 import TabItem from "share/components/atoms/tab-item";
 import styled from 'styled-components'
-
+import {Link} from 'react-router-dom'
 const TabItemsWrapper= styled.div`
 *{
     border:1px solid #e8e8f3;
@@ -57,7 +57,8 @@ const TabItemExamples = () => {
             />
       </TabItemsWrapper>
       
-           
+        <br/>
+    <Link to="/tabview" >Tab View</Link>
        
     </div>
   );

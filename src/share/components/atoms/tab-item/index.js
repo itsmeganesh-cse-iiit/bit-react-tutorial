@@ -12,6 +12,8 @@ const TabItem = ({
   borderRadius,
   title,
   children,
+  onClick,
+  id,
   ...rest
 }) => {
   return (
@@ -25,6 +27,7 @@ const TabItem = ({
       borderRadius={borderRadius}
       vertical={vertical}
       {...rest}
+      onClick={()=>onClick(id)}
     >
       {children ? children : title}
     </Wrap>
@@ -40,6 +43,7 @@ TabItem.defaultProps = {
   arrowPosition: "middle",
   vertical: false,
   borderRadius:"0px",
-  title:'Tab Item'
+  title:'Tab Item',
+  onClick:()=>{}
 };
 export default TabItem;

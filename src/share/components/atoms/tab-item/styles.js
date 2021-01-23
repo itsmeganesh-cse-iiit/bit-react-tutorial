@@ -25,6 +25,7 @@ export const Wrap=styled.div(({contentAlign,activeColor,borderRadius,color,activ
     padding:0 20px;
     color:#565656;
     z-index:2;
+    transition:all 0.3s ease;
     cursor:pointer;
     
     ${active && css`

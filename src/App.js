@@ -15,8 +15,12 @@ import BreadCrumbItemExamples from 'examples/bread-crumb-item-ex'
 
 // eslint-disable-next-line 
 import BreadCrumbsExample from 'examples/bread-crumbs-ex'
+
 // eslint-disable-next-line 
 import RankCardExamples from 'examples/rank-card-ex'
+// eslint-disable-next-line 
+import TabsExamples from 'examples/tabs-ex'
+
 
 
 import { Link, BrowserRouter, Route } from "react-router-dom";
@@ -34,6 +38,9 @@ function App() {
  const subItems={
   "/bread-crumb":[
     { to: "/bread-crumbs-view", label: "Final View" },
+  ],
+  "/tabs":[
+    { to: "/tabview", label: "Tab view" },
   ]
 }
   const Home=()=><>
@@ -62,7 +69,7 @@ function App() {
         
       </>
     ))}
-    <center>
+    {/* <center> */}
     <div>
     <Route exact path="/" component={Home}/>
     <Route exact path="/input" component={InputExamples}/>
@@ -70,9 +77,10 @@ function App() {
     <Route exact path="/bread-crumbs-view" component={BreadCrumbsMore}/>
     <Route exact path="/table" component={TableExamples}/>
     <Route exact path="/tabs" component={TabItemExamples} />
+    <Route exact path="/tabview" component={TabsExamples} />
     <Route exact path="/rank-card" component={RankCardExamples}/>
     </div>
-    </center>
+    {/* </center> */}
     </BrowserRouter>
     </>
   );
