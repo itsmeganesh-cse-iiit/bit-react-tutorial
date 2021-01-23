@@ -17,8 +17,7 @@ const hasProperty=(inpVal,data)=>{
 }
 
 export const Wrap=styled.div`
-    display:flex;
-    flex-direction:column;
+    display:block;
 `
   
 export const InputLabel=styled.label`

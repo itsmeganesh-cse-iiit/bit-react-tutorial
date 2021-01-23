@@ -24,52 +24,56 @@ import { Link, BrowserRouter, Route } from "react-router-dom";
 function App() {
   const items = [
     { to: "/", label: "Home" },
-    { to: "/dashboard", label: "Dashboard" },
-    { to: "/contact", label: "Contact" },
-    { to: "/about", label: "About" },
-    { to: "/blog", label: "Blog" },
+    { to: "/input", label: "Input Fields" },
+    { to: "/table", label: "Tables" },
+    { to: "/bread-crumb", label: "Bread Crumbs" },
+    { to: "/tabs", label: "Tabs" },
+    { to: "/rank-card", label: "Rank Card" },
+    
 ];
  const subItems={
-  "/dashboard":[
-    { to: "/instrutions", label: "Instructions" },
+  "/bread-crumb":[
+    { to: "/bread-crumbs-view", label: "Final View" },
   ]
 }
-  const Home=()=><h2>Home Page</h2>
+  const Home=()=><></>
   const Contact=()=><h2>Contact Page</h2>
-  const Dashboard=()=><h2>Dashboard Page<br/>
-  <Link to={'/instrutions?id=10'} >Instructions</Link></h2>
+  const BreadCrumsComp=()=><><BreadCrumbItemExamples/><br/>
+  <Link to={'/bread-crumbs-view'} >Full Bread Crumb view</Link><br/></>
   const About=()=><h2>About Page</h2>
   const Blog=()=><h2>Blog Page</h2>
-  const Instructions=()=><h2>Instructions </h2>
+  const BreadCrumbsMore=()=><> <BreadCrumbsExample routesList={items} subRoutesList={subItems} /></>
   return (
     <>
-    {/* <InputExamples/> */}
-    {/* <TabItemExamples/> */}
-    {/* <TableExamples/> */}
-    {/* <BreadCrumbItemExamples/> */}
+
+
     {/* <RankCardExamples/> */}
   
     <BrowserRouter>
+    <hr/>
     <BreadCrumbsExample routesList={items} subRoutesList={subItems} />
-    <Route exact path="/" component={Home}/>
-    <Route exact path="/contact" component={Contact}/>
-    <Route exact path="/contact/:username" component={Contact}/>
-    <Route exact path="/dashboard" component={Dashboard}/>
-    <Route exact path="/instrutions" component={Instructions}/>
-    <Route exact path="/about" component={About}/>
-    <Route exact path="/blog" component={Blog}/>
+    <hr/>
+
     <br/>
-        {items.map(({ to, label }) => (
-          <>
-          <button>
-            <Link to={to} key={to}>
-              {label}
-            </Link>
-            </button>
-            
-          </>
-        ))}
-     
+    {items.map(({ to, label }) => (
+      <>
+      <button style={{margin:"2px"}}>
+        <Link to={to} key={to} style={{textDecoration:"none"}}>
+          {label}
+        </Link>
+        </button>
+        
+      </>
+    ))}
+    <center>
+    <Route exact path="/" component={Home}/>
+    <Route exact path="/input" component={InputExamples}/>
+    <Route exact path="/bread-crumb" component={BreadCrumsComp}/>
+    <Route exact path="/bread-crumbs-view" component={BreadCrumbsMore}/>
+    <Route exact path="/table" component={TableExamples}/>
+    <Route exact path="/tabs" component={TabItemExamples} />
+    <Route exact path="/rank-card" component={RankCardExamples}/>
+    </center>
     </BrowserRouter>
     </>
   );

@@ -27,7 +27,8 @@ BreadCrumbItem.defaultProps={
     color:'#d71a63',
     activeColor:'#242424',
     active:false,
-    label:"item"
+    label:"item",
+    onClick:()=>{}
 
 }
 

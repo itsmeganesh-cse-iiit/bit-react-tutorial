@@ -4,7 +4,7 @@ import {Wrap,InputLabel,ErrText} from './styles'
 
 const InputGroup = ({inputLabel,type,size,block,disabled,error,errorText,value,className,...rest}) => {
     return (
-        <Wrap className={className} {...rest} size={size}>
+        <Wrap className={className} {...rest}>
             <InputLabel>{inputLabel}</InputLabel>
             <Input
                 type={type} 
