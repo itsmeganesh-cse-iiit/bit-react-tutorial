@@ -27,7 +27,13 @@ export const Wrap=styled.div(({contentAlign,activeColor,borderRadius,color,activ
     z-index:2;
     transition:all 0.3s ease;
     cursor:pointer;
+
+    @media screen and (max-width:767px){
+        white-space: nowrap;
+       text-overflow: ellipsis;
+    }
     
+
     ${active && css`
         color: #ffffff;
         font-weight: bold;
@@ -45,16 +51,22 @@ export const Wrap=styled.div(({contentAlign,activeColor,borderRadius,color,activ
         `}
         border-color: ${active ? activeColor :color} transparent;
         bottom: -7px;
-        left: 95px;
+        left: auto;
         z-index:1;
-
+     
+        @media screen and (max-width:767px){
+            display:none;
+        }
         ${(arrowPosition==="left" || vertical)&& css`
             transform:rotate(-90deg);
             bottom:auto;
             left:auto;
-            top: 17px;
+            top: auto;
             right: -12px;
+            
         `}
+
+       
     }
 
 `)

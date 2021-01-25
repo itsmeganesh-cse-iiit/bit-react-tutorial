@@ -1,12 +1,10 @@
 import React,{useEffect,useState} from 'react'
-import {Wrap} from './styles'
-import styled from 'styled-components';
+import {Wrap,ActiveRoute} from './styles'
 import BreadCrumbItem from 'share/components/atoms/bread-crumb-item'
 import {getRouteDetails} from './helpers'
 /**
- * Place breadcrumbs component on top of routes
+ * Place breadcrumbs component within the browser router
  */
-
 
 const BreadCrumbs = ({routesList,subroutesList,history}) => {
       const [breadcrumbsList, setBreadcrumbsList] = useState([])
@@ -14,7 +12,6 @@ const BreadCrumbs = ({routesList,subroutesList,history}) => {
 
       useEffect(() => {
         let pathName=history.location.pathname
-        console.log("pathname",pathName)
         if(pathName!=="/"){
             let nextList=homeRoute
             let currentRoute=getRouteDetails(routesList,pathName)
@@ -36,6 +33,8 @@ const BreadCrumbs = ({routesList,subroutesList,history}) => {
                         nextRouteList.push(currentSubRoute)
                         setBreadcrumbsList(nextRouteList)
                         break;
+                    }else{
+                        setBreadcrumbsList([])
                     }
                 }
             }
@@ -61,6 +60,7 @@ const BreadCrumbs = ({routesList,subroutesList,history}) => {
                  />
             ))}
         <br/>
+        <ActiveRoute>{breadcrumbsList.length>0 && breadcrumbsList.slice(-1)[0].label}</ActiveRoute>
         </Wrap>     
     )
 }

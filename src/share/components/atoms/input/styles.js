@@ -20,7 +20,8 @@ const hasProperty=(inpVal,data)=>{
 
 
 export const StyledInput=styled.input(({type,size,disabled,error,typeLabel})=>`
-      border-radius: 6px;
+    border-radius: 6px;
+
     height:${hasProperty('48px',PROPS.height[size])};
     z-index:1;
     box-sizing:border-box
@@ -67,8 +68,6 @@ export const StyledInput=styled.input(({type,size,disabled,error,typeLabel})=>`
 
 
 export const StyledTextArea=styled.textarea(({resize,type,size,disabled,error,typeLabel})=>`
-      border-radius: 6px;
-
     height:${hasProperty('48px',PROPS.height[size])};
     z-index:1;
     box-sizing:border-box

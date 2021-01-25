@@ -2,15 +2,23 @@ import styled, { css } from "styled-components";
 
 export const TabItemsWrapper = styled.div`
   display: flex;
+  
+
+  @media screen and (max-width:767px){
+    overflow:auto;
+    
+  }
   * {
     border: 1px solid #e8e8f3;
     box-sizing: border-box;
+    border-bottom:none;
     border-right-style: none;
     &:first-child {
       border-top-left-radius: 6px;
     }
     &:last-child {
       border-bottom-left-radius: 6px;
+      border-bottom:1px solid #e8e8f3;
     }
 
     ${({ layout }) =>
@@ -39,6 +47,9 @@ export const TabItemsWrapper = styled.div`
         font-size:18px;
         &:first-child{
             margin-top:30px;
+        }
+        &:last-child{
+            border:none;
         }
     `}
 
@@ -71,6 +82,7 @@ export const TabsWrapper = styled.div`
 export const Content = styled.div`
   width: 100%;
   border: 1px solid #e8e8f3;
+  overflow-x:auto;
 
   ${({padLayout})=>padLayout && css`
         border:none;

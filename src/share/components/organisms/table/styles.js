@@ -2,13 +2,13 @@ import styled,{css} from 'styled-components'
 
 
 export const StyledTable=styled.table`
+   * {
+      box-sizing: border-box;
+    }
     border-collapse: collapse;
     font-family:inherit;
     margin:3px;
-    width:${({block})=>block ? "100%" : 'auto'};
-    * {
-      box-sizing: border-box;
-    }
+    width:${({block})=>block ? "99%" : 'auto'}; 
    
     td{
         padding: 24px 38px 22px 38px;

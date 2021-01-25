@@ -1,5 +1,6 @@
 import React from 'react'
 import {Wrap,ArrowIcon,Text} from './styles'
+import ArrowImage from './arrow-right.svg'
 const BreadCrumbItem = ({label,color,activeColor,active,position,totalCount,onClick,to,...rest}) => {
     let props={
         activeColor:activeColor,
@@ -18,7 +19,7 @@ const BreadCrumbItem = ({label,color,activeColor,active,position,totalCount,onCl
     return (
         <Wrap {...props} {...rest} onClick={handleClick}>
             <Text {...props} >{label} </Text>
-            <ArrowIcon {...props}>&#62;</ArrowIcon>
+            <ArrowIcon {...props}><img src={ArrowImage} alt="arrow"/></ArrowIcon>
         </Wrap>
     )
 }
