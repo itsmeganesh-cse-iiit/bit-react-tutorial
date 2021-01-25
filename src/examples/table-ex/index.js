@@ -91,21 +91,26 @@ const TableExamples = () => {
   return (
     <div style={{margin:"10px 50px"}}>
       <h3>Table</h3>
+      <div style={{overflowX:"auto"}}>
       <Table columns={columns}><TableData/></Table>
-
+       </div>
       <h3>Table-Block</h3>
-      <Table columns={columns} block><TableData/></Table>
+      <div style={{overflowX:"auto"}}>
 
+      <Table columns={columns} block><TableData/></Table>
+     </div>
       <h3>Table - Heading - alignments</h3>
+      <div style={{overflowX:"auto"}}>
       <Table columns={columns} block><TableData/></Table>
-
+      </div>
       <h3>Table - w/o Heading</h3>
+      <div style={{overflowX:"auto"}}>
       <Table block list><TableData2/></Table>
+      </div>
 
 
-
-      <h3>Table - w/o Heading ex-2</h3>
-      <Table block ><TableData3/></Table>
+      {/* <h3>Table - w/o Heading ex-2</h3>
+      <Table block ><TableData3/></Table> */}
     </div>
   );
 };

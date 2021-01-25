@@ -21,6 +21,10 @@ import RankCardExamples from 'examples/rank-card-ex'
 // eslint-disable-next-line 
 import TabsExamples from 'examples/tabs-ex'
 
+// eslint-disable-next-line 
+import AccordionExamples from 'examples/accordion-ex'
+
+
 
 
 import { Link, BrowserRouter, Route } from "react-router-dom";
@@ -33,6 +37,7 @@ function App() {
     { to: "/bread-crumb", label: "Bread Crumbs" },
     { to: "/tabs", label: "Tabs" },
     { to: "/rank-card", label: "Rank Card" },
+    { to: "/accordion", label:"Accordion"}
     
 ];
  const subItems={
@@ -79,6 +84,7 @@ function App() {
     <Route exact path="/tabs" component={TabItemExamples} />
     <Route exact path="/tabview" component={TabsExamples} />
     <Route exact path="/rank-card" component={RankCardExamples}/>
+    <Route exact path="/accordion" component={AccordionExamples}/>
     </div>
     {/* </center> */}
     </BrowserRouter>
