@@ -8,7 +8,7 @@ const POSITION={
 
 
 export const Wrap=styled.div(({contentAlign,activeColor,borderRadius,color,active,showArrow,arrowPosition,vertical})=>`
-    width: 230px;
+    width: ${vertical ? '205px' :'135px'};
     height: 48px;
     border-radius: ${borderRadius};
     background-color: ${active ? activeColor :color};

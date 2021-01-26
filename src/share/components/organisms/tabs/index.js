@@ -2,11 +2,11 @@ import React from "react";
 import TabItem from "share/components/atoms/tab-item";
 import {TabItemsWrapper,TabsWrapper,Content} from './styles'
 
-const Tabs = ({data,layout,color,activeColor,activeTab,onChange,borderRadius,showArrow,padLayout}) => {
+const Tabs = ({data,layout,color,activeColor,activeTab,onChange,borderRadius,showArrow,padLayout,isMarginable}) => {
  
   return (
-    <TabsWrapper layout={layout} borderRadius={borderRadius} >
-      <TabItemsWrapper layout={layout} padLayout={padLayout}>
+    <TabsWrapper layout={layout} borderRadius={borderRadius}  >
+      <TabItemsWrapper layout={layout} padLayout={padLayout} isMarginable={isMarginable}>
           {data.map((tabData,index)=>(
             <TabItem
             id={tabData.id}

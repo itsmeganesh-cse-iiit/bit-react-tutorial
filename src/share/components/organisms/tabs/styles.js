@@ -9,12 +9,17 @@ export const TabItemsWrapper = styled.div`
     
   }
   * {
+
     border: 1px solid #e8e8f3;
     box-sizing: border-box;
     border-bottom:none;
     border-right-style: none;
     &:first-child {
       border-top-left-radius: 6px;
+      ${({isMarginable})=>isMarginable && css`
+        margin-left:${(isMarginable!==true) ? isMarginable : '24px'};
+      `}
+      
     }
     &:last-child {
       border-bottom-left-radius: 6px;
