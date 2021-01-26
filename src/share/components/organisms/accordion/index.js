@@ -9,17 +9,17 @@ import {
   ExpansionText,
   BorderBottom
 } from "./styles";
-const Accordion = ({data=[],arrows=true,defaultStyles=true}) => {
+const Accordion = ({data=[],arrows=true,defaultStyles=true,exapandText=""}) => {
     
 
   return (
     <AccordionContainer>
-        {data.map(each=> <AccordionItem {...each} arrows={arrows} defaultStyles={defaultStyles}/>)}
+        {data.map(each=> <AccordionItem {...each} arrows={arrows} defaultStyles={defaultStyles} exapandText={exapandText}/>)}
     </AccordionContainer>
   );
 };
 
-const AccordionItem = ({activeColor,color,title,body,arrows,defaultStyles}) => {
+const AccordionItem = ({activeColor,color,title,body,arrows,defaultStyles,exapandText}) => {
   const [isExpanded, setIsExpanded] = useState(false)
   const [setHeight, setHeightState] = useState("0px");
   const content = useRef(null);
@@ -39,7 +39,7 @@ const AccordionItem = ({activeColor,color,title,body,arrows,defaultStyles}) => {
       </AccordionHeader>
       <AccordionBody  maxHeight={setHeight}>
      <div ref={content} style={{ maxHeight: `${setHeight}` }}>{body}</div>
-     {!arrows && <ExpansionText onClick={handleToggleAccordion}>{isExpanded ? 'Collapse ' : 'Exapand '} Answer</ExpansionText>}
+     {!arrows && <ExpansionText onClick={handleToggleAccordion}>{isExpanded ? 'Collapse ' : 'Exapand '}{exapandText}</ExpansionText>}
       <BorderBottom/>
       </AccordionBody>
 

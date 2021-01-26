@@ -29,10 +29,10 @@ const AccordionExamples = () => {
             <Accordion data={data.slice(0,2)}/>
             <br/>
             <h3>Ex-2 :Accordion w/o arrows and with default styles</h3>
-            <Accordion data={data.slice(0,1)} arrows={false} defaultStyles={true}/>
+            <Accordion data={data.slice(0,1)} arrows={false}  defaultStyles={true}/>
             <br/>
             <h3>Ex-3 :Accordion w/o arrows and w/o default styles</h3>
-            <Accordion data={data.slice(0,1)} arrows={false} defaultStyles={false}/>
+            <Accordion data={data.slice(0,1)} arrows={false} exapandText="Answer" defaultStyles={false}/>
         </div>
     )
 }
