@@ -83,7 +83,7 @@ let tabdata3=[
       <Tabs data={tabdata} activeTab={activeTab} onChange={onTabChange}  activeColor="#d71a63" color="#f9f9ff" isMarginable/>
     
       <h2>Vertical Layout-2</h2>
-      <Tabs data={tabdata3} activeTab={activeTab} onChange={onTabChange}  activeColor="#d71a63" color="#ffff" layout="vertical" borderRadius="6px" showArrow={false} padLayout/>
+      <Tabs data={tabdata2} activeTab={activeTab} onChange={onTabChange}  activeColor="#d71a63" color="#ffff" layout="vertical" borderRadius="6px" showArrow={false} padLayout/>
     
     </div>
   );

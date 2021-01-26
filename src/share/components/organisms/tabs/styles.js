@@ -2,7 +2,9 @@ import styled, { css } from "styled-components";
 
 export const TabItemsWrapper = styled.div`
   display: flex;
-  height:${({maxHeight})=>maxHeight};
+  ${({layout})=>layout==="vertical" && css`
+    height:${({maxHeight})=>maxHeight};
+  `}
 
   @media screen and (max-width:767px){
     overflow:auto;
