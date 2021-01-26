@@ -39,7 +39,7 @@ const AccordionItem = ({activeColor,color,title,body,arrows,defaultStyles,exapan
       </AccordionHeader>
       <AccordionBody  maxHeight={setHeight}>
      <div ref={content} style={{ maxHeight: `${setHeight}` }}>{body}</div>
-     {!arrows && <ExpansionText onClick={handleToggleAccordion}>{isExpanded ? 'Collapse ' : 'Exapand '}{exapandText}</ExpansionText>}
+     {!arrows && <ExpansionText onClick={handleToggleAccordion}>{isExpanded ? 'Collapse ' : 'Expand '}{exapandText}</ExpansionText>}
       <BorderBottom/>
       </AccordionBody>
 
