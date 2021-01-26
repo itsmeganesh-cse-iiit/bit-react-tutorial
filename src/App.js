@@ -2,31 +2,16 @@ import React from 'react';
 
 import {useHistory} from 'react-router-dom'
 // examples 
-// eslint-disable-next-line 
 import InputExamples from 'examples/input-ex/'
-// eslint-disable-next-line 
 import TabItemExamples from 'examples/tab-item-ex'
-
-// eslint-disable-next-line 
 import TableExamples from 'examples/table-ex'
-
-// eslint-disable-next-line 
 import BreadCrumbItemExamples from 'examples/bread-crumb-item-ex'
-
-// eslint-disable-next-line 
 import BreadCrumbsExample from 'examples/bread-crumbs-ex'
-
-// eslint-disable-next-line 
 import RankCardExamples from 'examples/rank-card-ex'
-// eslint-disable-next-line 
 import TabsExamples from 'examples/tabs-ex'
-
-// eslint-disable-next-line 
 import AccordionExamples from 'examples/accordion-ex'
-
-
-// eslint-disable-next-line 
 import DropdownMenuExamples from 'examples/dropdown-menu-ex'
+import ModalExamples from 'examples/modal-ex'
 
 import { Link, BrowserRouter, Route } from "react-router-dom";
 
@@ -41,6 +26,7 @@ function App() {
     { to: "/rank-card", label: "Rank Card" },
     { to: "/accordion", label:"Accordion"},
     { to: "/dropdown-menu", label:"DropDown"},
+    { to: "/modal", label:"Modal"},
     
 ];
  const subItems={
@@ -83,7 +69,7 @@ function App() {
     ))}
     {/* <center> */}
     <div>
-    <Route exact path="/" component={AccordionExamples}/>
+    <Route exact path="/" component={ModalExamples}/>
     <Route exact path="/input" component={InputExamples}/>
     <Route exact path="/bread-crumb" component={BreadCrumsComp}/>
     <Route exact path="/bread-crumbs-view" component={BreadCrumbsMore}/>
@@ -93,6 +79,7 @@ function App() {
     <Route exact path="/rank-card" component={RankCardExamples}/>
     <Route exact path="/accordion" component={AccordionExamples}/>
     <Route exact path="/dropdown-menu" component={DropdownMenuExamples}/>
+    <Route exact path="/modal" component={ModalExamples}/>
     </div>
     {/* </center> */}
     </BrowserRouter>
