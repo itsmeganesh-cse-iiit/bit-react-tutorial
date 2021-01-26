@@ -1,6 +1,6 @@
 import React from 'react';
 
-
+import {useHistory} from 'react-router-dom'
 // examples 
 // eslint-disable-next-line 
 import InputExamples from 'examples/input-ex/'
@@ -31,6 +31,7 @@ import DropdownMenuExamples from 'examples/dropdown-menu-ex'
 import { Link, BrowserRouter, Route } from "react-router-dom";
 
 function App() {
+  const history=useHistory()
   const items = [
     { to: "/", label: "Home" },
     { to: "/input", label: "Input Fields" },
@@ -61,8 +62,12 @@ function App() {
 
   
     <BrowserRouter>
+
     <hr/>
+    <div style={{display:"flex",justifyContent:"space-between",alignItems:"center"}}>
     <BreadCrumbsExample routesList={items} subRoutesList={subItems} />
+    {/* <a style={{fontSize:"18px",marginRight:"20px"}} onClick={()=>history.goBack(-1)}>Back</a> */}
+    </div>
     <hr/>
 
     <br/>
@@ -78,7 +83,7 @@ function App() {
     ))}
     {/* <center> */}
     <div>
-    <Route exact path="/" component={DropdownMenuExamples}/>
+    <Route exact path="/" component={AccordionExamples}/>
     <Route exact path="/input" component={InputExamples}/>
     <Route exact path="/bread-crumb" component={BreadCrumsComp}/>
     <Route exact path="/bread-crumbs-view" component={BreadCrumbsMore}/>
