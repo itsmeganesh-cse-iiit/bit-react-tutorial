@@ -24,8 +24,8 @@ const Modal = ({open,handleClose,body,centered,size,onSubmit,btnSet,children,hea
                         <ModalBody>{body}</ModalBody>
                         {footer ? footer : 
                         <ModalFooter>
-                            {btnSet.ok && <Button variant="outline" onClick={handleSubmit}>Yes</Button>}
-                            {btnSet.cancel  && <Button variant="primary" size={size} onClick={closeModal}>Cancel</Button>}</ModalFooter>}
+                            {btnSet.ok.show && <Button variant={btnSet.ok.type} onClick={handleSubmit}>Yes</Button>}
+                            {btnSet.cancel.show  && <Button variant={btnSet.cancel.type} size={size} onClick={closeModal}>Cancel</Button>}</ModalFooter>}
                     </>
                     }
                 </ModalContent>
@@ -40,8 +40,15 @@ Modal.defaultProps={
     onSubmit:()=>{},
     size:"md",
     btnSet:{
-        ok:true,
-        cancel:true
+        ok:{
+            show:true,
+            type:"outline"
+
+        },
+        cancel:{
+            show:true,
+            type:"primary"
+        }
     },
     headerText:"Header"
     
