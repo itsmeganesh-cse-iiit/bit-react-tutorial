@@ -36,7 +36,6 @@ export const ModalContent = styled.div`
   background-color: #ffffff;
   display:flex;
   flex-direction:column;
-  justify-content:space-between;
 `;
 
 export const ModalHeader = styled.div``;
@@ -79,7 +78,6 @@ export const Button = styled.button`
   overflow:hidden;
   text-overflow:ellipsis;
   white-space:nowrap;
-  /* margin: 52px 14px 9px 40px; */
   margin:10px 10px;
   border-radius: 6px;
   border: solid 1px #d71a63;
@@ -94,6 +92,7 @@ export const Button = styled.button`
   text-align: center;
   cursor: pointer;
   color: #d71a63;
+  padding:0 20px;
   &:hover {
     background-color: #d71a63;
     color: white;

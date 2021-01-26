@@ -48,4 +48,4 @@ Modal.defaultProps={
 }
 export default Modal
 
-export {ModalContainer,ModalHeader,ModalBody,ModalFooter,ModalContent,H2,Button}
+export {ModalContainer,ModalHeader,ModalBody,ModalFooter,ModalContent,H2 as ModalH2,Button as ModalButton}
