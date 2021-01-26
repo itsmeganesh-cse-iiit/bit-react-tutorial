@@ -56,6 +56,19 @@ const TabsExamples = () => {
         id:4,
        },
 ]
+let tabdata3=[
+  {
+      name:"Profile",
+      data:<Data data="Data 1"/>,
+      id:1,
+  },
+  {
+    name:"FAQ's",
+    data:<Data data="Data 2"/>,
+    id:2,
+   },
+   
+]
 
   const onTabChange=(tabId)=>{
     setActiveTab(tabId)
@@ -70,7 +83,7 @@ const TabsExamples = () => {
       <Tabs data={tabdata} activeTab={activeTab} onChange={onTabChange}  activeColor="#d71a63" color="#f9f9ff" isMarginable/>
     
       <h2>Vertical Layout-2</h2>
-      <Tabs data={tabdata2} activeTab={activeTab} onChange={onTabChange}  activeColor="#d71a63" color="#ffff" layout="vertical" borderRadius="6px" showArrow={false} padLayout/>
+      <Tabs data={tabdata3} activeTab={activeTab} onChange={onTabChange}  activeColor="#d71a63" color="#ffff" layout="vertical" borderRadius="6px" showArrow={false} padLayout/>
     
     </div>
   );
