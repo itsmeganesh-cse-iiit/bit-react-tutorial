@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useRef} from "react";
 import Arrow from "./assets/arrow-down";
 import {
   AccordionItemWrapper,
@@ -6,9 +6,11 @@ import {
   AccordionBody,
   Title,
   AccordionContainer,
-  ExpansionText
+  ExpansionText,
+  BorderBottom
 } from "./styles";
 const Accordion = ({data=[],arrows=true,defaultStyles=true}) => {
+    
 
   return (
     <AccordionContainer>
@@ -19,19 +21,28 @@ const Accordion = ({data=[],arrows=true,defaultStyles=true}) => {
 
 const AccordionItem = ({activeColor,color,title,body,arrows,defaultStyles}) => {
   const [isExpanded, setIsExpanded] = useState(false)
+  const [setHeight, setHeightState] = useState("0px");
+  const content = useRef(null);
+ 
+
+  const handleToggleAccordion=()=>{
+    setIsExpanded(prevExpanded =>!prevExpanded)
+    setHeightState(
+        isExpanded ? "0px" : `${content.current.scrollHeight}px`
+      );
+  }
   return (
     <AccordionItemWrapper>
-      <AccordionHeader defaultStyles={defaultStyles} isExpanded={isExpanded} onClick={()=>setIsExpanded(!isExpanded)} color={color} activeColor={activeColor}>
-        <Title isExpanded={isExpanded}>{title}</Title>
+      <AccordionHeader defaultStyles={defaultStyles} isExpanded={isExpanded} onClick={handleToggleAccordion} color={color} activeColor={activeColor}>
+        <Title>{title}</Title>
         {arrows && <Arrow fill={isExpanded ? activeColor : color}/>}
       </AccordionHeader>
-      <AccordionBody>
-      {isExpanded && <div>{body}</div>}
-      {!arrows && <ExpansionText onClick={()=>setIsExpanded(!isExpanded)}>{isExpanded ? 'Collapse ' : 'Exapand '} Answer</ExpansionText>}
+      <AccordionBody  maxHeight={setHeight}>
+     <div ref={content} style={{ maxHeight: `${setHeight}` }}>{body}</div>
+     {!arrows && <ExpansionText onClick={handleToggleAccordion}>{isExpanded ? 'Collapse ' : 'Exapand '} Answer</ExpansionText>}
+      <BorderBottom/>
       </AccordionBody>
 
-      
-     
     </AccordionItemWrapper>
   );
 };

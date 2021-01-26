@@ -12,16 +12,27 @@ export const AccordionHeader = styled.div`
   cursor: pointer;
   color: ${({ isExpanded, color, activeColor,defaultStyles }) =>
     (isExpanded && defaultStyles) ? activeColor : color};
-
   svg {
     transform: rotate(180deg);
     transform: ${({ isExpanded }) =>
       isExpanded ? "rotate(180deg)" : "rotate(0deg)"};
     font-size: 1rem;
+    transition: transform 0.3s ease-out;
   }
-  transition: transform 1s ease-out;
+  ${({ isExpanded,defaultStyles }) =>
+    (isExpanded && defaultStyles) &&
+    css`
+    div{
+        font-weight: bold;
+    }
+   
+    `}
+  
 `;
 
+export const BorderBottom =styled.div`
+  border-bottom: 1px solid #e8e8f3;
+`
 export const AccordionBody = styled.div`
   margin-right: 12px;
   margin-top: 12px;
@@ -32,12 +43,11 @@ export const AccordionBody = styled.div`
   font-style: normal;
   line-height: 1.71;
   letter-spacing: normal;
-  border-bottom: 1px solid #e8e8f3;
-  overflow: auto;
-
+  overflow: hidden;
   div {
-    margin: 12px 0px;
-    max-height: auto;
+      ${({maxHeight})=>maxHeight!=="0px" && css`
+      margin: 12px 0px;
+      `}
     transition: all 0.2s ease-out;
   }
 `;
@@ -51,17 +61,10 @@ export const Title = styled.div`
   line-height: 1.5;
   letter-spacing: normal;
   text-align: left;
-  ${({ isExpanded,defaultStyles }) =>
-    (isExpanded && defaultStyles) &&
-    css`
-      font-weight: bold;
-    `}
+ 
 `;
 
 export const AccordionContainer = styled.div`
-  * {
-    margin-bottom: 1px solid red;
-  }
 `;
 
 export const ExpansionText = styled.div`
@@ -77,4 +80,7 @@ export const ExpansionText = styled.div`
   color: #0c85bb;
   text-decoration:underline;
   cursor: pointer;
+  background-color:white;
+  width:100%;
+  z-index:100;
 `;
