@@ -5,7 +5,7 @@ import InputGroup from 'share/components/molecules/input-group'
 const InputExamples = () => {
     const [firstName, setFirstName] = useState('')
     return (
-        <div style={{margin:"10px 100px"}}>
+        <div style={{width:"800px",margin:"40px auto"}}>
         {/* Inputs */}
         <h3>Input - Text</h3>
         <Input 
@@ -20,7 +20,8 @@ const InputExamples = () => {
             type="password"
             value={firstName} 
             onChange={e=>setFirstName(e.target.value)}
-            size="md"
+            size="lg"
+
         />
         <h3>Input - TextArea</h3>
         <Input 
@@ -29,6 +30,7 @@ const InputExamples = () => {
             onChange={e=>setFirstName(e.target.value)}
             rows={10}
             resize
+            block
         />
         <h3>Input group Password</h3>
         <InputGroup value={firstName}  type="password" error size="560px" inputLabel="Unique ID"  onChange={e=>setFirstName(e.target.value)} errorText="Please fill all fields" />

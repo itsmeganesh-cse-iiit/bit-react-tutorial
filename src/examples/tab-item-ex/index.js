@@ -16,7 +16,8 @@ const TabItemsWrapper= styled.div`
 `
 const TabItemExamples = () => {
   return (
-    <div style={{margin:"10px 100px"}}>
+    <>
+    <div style={{margin:"10px 100px",display:"flex"}}>
       {/* Tab Items and Tabs */}
       <br />
       <TabItem activeColor="#d71a63" color="#e8e8f3" active vertical /> <br />
@@ -58,9 +59,12 @@ const TabItemExamples = () => {
       </TabItemsWrapper>
       
         <br/>
-    <button><Link to="/tabview" >TAB LAYOUTS</Link></button>
+ 
+
        
-    </div>
+      </div>
+        <button style={{width:"auto",margin:"auto",display:"block"}}><Link to="/tabview" >TAB LAYOUTS</Link></button>
+        </>
   );
 };
 

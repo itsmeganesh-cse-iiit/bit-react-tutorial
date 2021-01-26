@@ -24,7 +24,7 @@ const AccordionExamples = () => {
        },
     ]
     return (
-        <div>
+        <div style={{width:"800px",margin:"40px auto"}}>
              <h3>Ex-1 : Accordion with default styles</h3>
             <Accordion data={data.slice(0,2)}/>
             <br/>
